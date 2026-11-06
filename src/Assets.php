@@ -9,6 +9,8 @@ declare( strict_types=1 );
 
 namespace WpPatternsDebug;
 
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Loads the built editor script and style, gated by capability.
  */

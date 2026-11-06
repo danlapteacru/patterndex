@@ -9,6 +9,8 @@ declare( strict_types=1 );
 
 namespace WpPatternsDebug;
 
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Maps the plugin's meta capability to a primitive one.
  *

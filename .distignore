@@ -9,5 +9,6 @@ vendor
 screenshots
 composer.json
 composer.lock
+package-lock.json
 *.log
 .DS_Store

@@ -14,6 +14,8 @@ use WP_Block_Patterns_Registry;
 use WP_REST_Response;
 use WP_REST_Server;
 
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Dumps the raw server-side pattern and category registries.
  *
