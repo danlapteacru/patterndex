@@ -25,7 +25,7 @@ export default function useServerRegistry(): ServerRegistryState {
 	useEffect( () => {
 		let cancelled = false;
 
-		apiFetch< ServerRegistry >( { path: '/wp-patterns-debug/v1/registry' } )
+		apiFetch< ServerRegistry >( { path: '/patterndex/v1/registry' } )
 			.then( ( registry ) => {
 				if ( ! cancelled ) {
 					setState( { status: 'success', registry } );

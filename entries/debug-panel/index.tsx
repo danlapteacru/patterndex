@@ -30,7 +30,7 @@ export default function DebugPanel( { clientId }: DebugPanelProps ) {
 	return (
 		<InspectorControls>
 			<PanelBody
-				title={ __( 'Debug', 'patterns-debug' ) }
+				title={ __( 'Debug', 'patterndex' ) }
 				opened={ open }
 				onToggle={ () => setOpen( ! open ) }
 				className="wppd-panel"

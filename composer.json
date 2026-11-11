@@ -1,5 +1,5 @@
 {
-    "name": "danlapteacru/wp-patterns-debug",
+    "name": "danlapteacru/patterndex",
     "description": "Pattern registry browser and block/pattern debug panel for the WordPress block editor.",
     "type": "wordpress-plugin",
     "license": "GPL-2.0-or-later",
@@ -12,10 +12,10 @@
         "blocks",
         "debug"
     ],
-    "homepage": "https://github.com/danlapteacru/wp-patterns-debug",
+    "homepage": "https://github.com/danlapteacru/patterndex",
     "support": {
-        "issues": "https://github.com/danlapteacru/wp-patterns-debug/issues",
-        "source": "https://github.com/danlapteacru/wp-patterns-debug"
+        "issues": "https://github.com/danlapteacru/patterndex/issues",
+        "source": "https://github.com/danlapteacru/patterndex"
     },
     "authors": [
         {
@@ -29,7 +29,7 @@
     },
     "autoload": {
         "psr-4": {
-            "WpPatternsDebug\\": "src/"
+            "Patterndex\\": "src/"
         }
     },
     "config": {

@@ -37,12 +37,12 @@ export default function AttributesEditor( {
 
 	return (
 		<section>
-			<h3>{ __( 'Attributes', 'patterns-debug' ) }</h3>
+			<h3>{ __( 'Attributes', 'patterndex' ) }</h3>
 
 			<TextareaControl
 				__nextHasNoMarginBottom
 				hideLabelFromVision
-				label={ __( 'Attributes JSON', 'patterns-debug' ) }
+				label={ __( 'Attributes JSON', 'patterndex' ) }
 				className="wppd-json-editor"
 				rows={ 12 }
 				value={ draft ?? liveJson }
@@ -54,12 +54,12 @@ export default function AttributesEditor( {
 					{ validation.error === 'invalid-json'
 						? sprintf(
 								/* translators: %s: JSON parser error message. */
-								__( 'Invalid JSON: %s', 'patterns-debug' ),
+								__( 'Invalid JSON: %s', 'patterndex' ),
 								validation.detail
 						  )
 						: __(
 								'Attributes must be a JSON object.',
-								'patterns-debug'
+								'patterndex'
 						  ) }
 				</Notice>
 			) }
@@ -70,7 +70,7 @@ export default function AttributesEditor( {
 						/* translators: %s: comma-separated attribute names. */
 						__(
 							'Not in the attribute schema: %s',
-							'patterns-debug'
+							'patterndex'
 						),
 						validation.unknownKeys.join( ', ' )
 					) }
@@ -93,14 +93,14 @@ export default function AttributesEditor( {
 						}
 					} }
 				>
-					{ __( 'Apply', 'patterns-debug' ) }
+					{ __( 'Apply', 'patterndex' ) }
 				</Button>
 				<Button
 					variant="tertiary"
 					disabled={ draft === null }
 					onClick={ () => setDraft( null ) }
 				>
-					{ __( 'Reset', 'patterns-debug' ) }
+					{ __( 'Reset', 'patterndex' ) }
 				</Button>
 			</Flex>
 		</section>

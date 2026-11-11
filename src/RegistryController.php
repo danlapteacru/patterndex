@@ -2,12 +2,12 @@
 /**
  * REST endpoint exposing the server-side pattern registries.
  *
- * @package wp-patterns-debug
+ * @package patterndex
  */
 
 declare( strict_types=1 );
 
-namespace WpPatternsDebug;
+namespace Patterndex;
 
 use WP_Block_Pattern_Categories_Registry;
 use WP_Block_Patterns_Registry;
@@ -27,7 +27,7 @@ final class RegistryController {
 	/**
 	 * REST namespace for the plugin.
 	 */
-	public const REST_NAMESPACE = 'wp-patterns-debug/v1';
+	public const REST_NAMESPACE = 'patterndex/v1';
 
 	/**
 	 * Register hooks.

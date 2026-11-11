@@ -28,45 +28,45 @@ function metaEntries(
 	serverSource?: string
 ): [ string, string ][] {
 	const entries: [ string, string ][] = [
-		[ __( 'Name', 'patterns-debug' ), pattern.name ],
+		[ __( 'Name', 'patterndex' ), pattern.name ],
 		[
-			__( 'Source', 'patterns-debug' ),
-			pattern.source ?? serverSource ?? __( 'unknown', 'patterns-debug' ),
+			__( 'Source', 'patterndex' ),
+			pattern.source ?? serverSource ?? __( 'unknown', 'patterndex' ),
 		],
 	];
 
 	if ( pattern.categories?.length ) {
 		entries.push( [
-			__( 'Categories', 'patterns-debug' ),
+			__( 'Categories', 'patterndex' ),
 			pattern.categories.join( ', ' ),
 		] );
 	}
 
 	if ( pattern.blockTypes?.length ) {
 		entries.push( [
-			__( 'Block types', 'patterns-debug' ),
+			__( 'Block types', 'patterndex' ),
 			pattern.blockTypes.join( ', ' ),
 		] );
 	}
 
 	if ( pattern.postTypes?.length ) {
 		entries.push( [
-			__( 'Post types', 'patterns-debug' ),
+			__( 'Post types', 'patterndex' ),
 			pattern.postTypes.join( ', ' ),
 		] );
 	}
 
 	if ( pattern.syncStatus ) {
 		entries.push( [
-			__( 'Sync status', 'patterns-debug' ),
+			__( 'Sync status', 'patterndex' ),
 			pattern.syncStatus,
 		] );
 	}
 
 	if ( pattern.inserter === false ) {
 		entries.push( [
-			__( 'Inserter', 'patterns-debug' ),
-			__( 'hidden', 'patterns-debug' ),
+			__( 'Inserter', 'patterndex' ),
+			__( 'hidden', 'patterndex' ),
 		] );
 	}
 
@@ -100,14 +100,14 @@ function PatternDetails( { pattern, serverPattern }: PatternItemProps ) {
 					</div>
 				) ) }
 				<div>
-					<dt>{ __( 'Blocks', 'patterns-debug' ) }</dt>
+					<dt>{ __( 'Blocks', 'patterndex' ) }</dt>
 					<dd>
 						{ Object.entries( blockCounts )
 							.map(
 								( [ blockName, count ] ) =>
 									`${ blockName } ×${ count }`
 							)
-							.join( ', ' ) || __( 'none', 'patterns-debug' ) }
+							.join( ', ' ) || __( 'none', 'patterndex' ) }
 					</dd>
 				</div>
 			</dl>
@@ -116,18 +116,18 @@ function PatternDetails( { pattern, serverPattern }: PatternItemProps ) {
 				<li>
 					<CopyButton
 						text={ pattern.name }
-						label={ __( 'Copy name', 'patterns-debug' ) }
+						label={ __( 'Copy name', 'patterndex' ) }
 					/>
 				</li>
 				<li>
 					<CopyButton
 						text={ pattern.content }
-						label={ __( 'Copy content', 'patterns-debug' ) }
+						label={ __( 'Copy content', 'patterndex' ) }
 					/>
 				</li>
 				<li>
 					<DumpButton
-						label={ __( 'Dump pattern', 'patterns-debug' ) }
+						label={ __( 'Dump pattern', 'patterndex' ) }
 						title={ pattern.name }
 						getValue={ () => pattern }
 					/>
@@ -137,13 +137,13 @@ function PatternDetails( { pattern, serverPattern }: PatternItemProps ) {
 						<DumpButton
 							label={ __(
 								'Dump server registration',
-								'patterns-debug'
+								'patterndex'
 							) }
 							title={ sprintf(
 								/* translators: %s: pattern name. */
 								__(
 									'Server registration: %s',
-									'patterns-debug'
+									'patterndex'
 								),
 								pattern.name
 							) }
@@ -155,7 +155,7 @@ function PatternDetails( { pattern, serverPattern }: PatternItemProps ) {
 
 			<ToggleControl
 				__nextHasNoMarginBottom
-				label={ __( 'Preview', 'patterns-debug' ) }
+				label={ __( 'Preview', 'patterndex' ) }
 				checked={ showPreview }
 				onChange={ setShowPreview }
 			/>

@@ -15,7 +15,7 @@ export default function CopyButton( { text, label }: CopyButtonProps ) {
 	const ref = useCopyToClipboard< HTMLButtonElement >( text, () => {
 		void createNotice(
 			'info',
-			__( 'Copied to clipboard.', 'patterns-debug' ),
+			__( 'Copied to clipboard.', 'patterndex' ),
 			{
 				isDismissible: true,
 				type: 'snackbar',

@@ -11,18 +11,18 @@ import PatternBrowser from './pattern-browser';
 import type { DebugPanelProps } from './types';
 import './index.scss';
 
-const SIDEBAR_NAME = 'wp-patterns-debug';
+const SIDEBAR_NAME = 'patterndex';
 
 registerPlugin( SIDEBAR_NAME, {
 	icon: bug,
 	render: () => (
 		<>
 			<PluginSidebarMoreMenuItem target={ SIDEBAR_NAME }>
-				{ __( 'Patterns Debug', 'patterns-debug' ) }
+				{ __( 'Patterndex', 'patterndex' ) }
 			</PluginSidebarMoreMenuItem>
 			<PluginSidebar
 				name={ SIDEBAR_NAME }
-				title={ __( 'Patterns Debug', 'patterns-debug' ) }
+				title={ __( 'Patterndex', 'patterndex' ) }
 				icon={ bug }
 			>
 				<SelectedBlockPanel />
@@ -34,7 +34,7 @@ registerPlugin( SIDEBAR_NAME, {
 
 addFilter(
 	'editor.BlockEdit',
-	'wp-patterns-debug/debug-panel',
+	'patterndex/debug-panel',
 	createHigherOrderComponent(
 		( BlockEdit ) =>
 			function BlockEditWithDebugPanel( props: DebugPanelProps ) {

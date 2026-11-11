@@ -47,7 +47,7 @@ export default function DumpButton( {
 					<pre className="wppd-markup">{ content }</pre>
 					<CopyButton
 						text={ content }
-						label={ __( 'Copy to clipboard', 'patterns-debug' ) }
+						label={ __( 'Copy to clipboard', 'patterndex' ) }
 					/>
 				</Modal>
 			) }
