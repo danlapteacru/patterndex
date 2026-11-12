@@ -2,25 +2,27 @@
 /**
  * Access control for the debug tools.
  *
- * @package wp-patterns-debug
+ * @package patterndex
  */
 
 declare( strict_types=1 );
 
-namespace WpPatternsDebug;
+namespace Patterndex;
+
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Maps the plugin's meta capability to a primitive one.
  *
  * Sites can remap access by filtering `map_meta_cap` for the
- * `view_patterns_debug` capability at a later priority.
+ * `view_patterndex` capability at a later priority.
  */
 final class Capabilities {
 
 	/**
 	 * Meta capability that gates every debug surface (assets and REST).
 	 */
-	public const VIEW = 'view_patterns_debug';
+	public const VIEW = 'view_patterndex';
 
 	/**
 	 * Register hooks.
@@ -30,7 +32,7 @@ final class Capabilities {
 	}
 
 	/**
-	 * Map `view_patterns_debug` to `edit_posts` by default.
+	 * Map `view_patterndex` to `edit_posts` by default.
 	 *
 	 * @param string[] $caps Primitive capabilities required.
 	 * @param string   $cap  Capability being checked.

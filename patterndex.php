@@ -1,29 +1,30 @@
 <?php
 /**
- * Plugin Name: Patterns Debug
- * Plugin URI: https://github.com/danlapteacru/wp-patterns-debug
+ * Plugin Name: Patterndex – Pattern & Block Debugger
+ * Plugin URI: https://github.com/danlapteacru/patterndex
  * Description: Adds a pattern registry browser and a block/pattern debug panel to the block editor.
- * Version: 0.1.1
+ * Version: 0.1.2
  * Requires at least: 6.6
  * Requires PHP: 8.1
  * Author: Dan Lapteacru
+ * Author URI: https://github.com/danlapteacru
  * License: GPL-2.0-or-later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: wp-patterns-debug
+ * Text Domain: patterndex
  *
- * @package wp-patterns-debug
+ * @package patterndex
  */
 
 declare( strict_types=1 );
 
-namespace WpPatternsDebug;
+namespace Patterndex;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'WP_PATTERNS_DEBUG_DIR', __DIR__ );
-define( 'WP_PATTERNS_DEBUG_FILE', __FILE__ );
+define( 'PATTERNDEX_DIR', __DIR__ );
+define( 'PATTERNDEX_FILE', __FILE__ );
 
 if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
 	require_once __DIR__ . '/vendor/autoload.php';

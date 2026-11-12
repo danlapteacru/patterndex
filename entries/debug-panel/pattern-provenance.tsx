@@ -60,13 +60,13 @@ export default function PatternProvenance( { block }: PatternProvenanceProps ) {
 
 	return (
 		<section>
-			<h3>{ __( 'Pattern provenance', 'wp-patterns-debug' ) }</h3>
+			<h3>{ __( 'Pattern provenance', 'patterndex' ) }</h3>
 
 			{ ! ref && ! patternName && (
 				<p className="wppd-muted">
 					{ __(
 						'No pattern linkage detected on this block.',
-						'wp-patterns-debug'
+						'patterndex'
 					) }
 				</p>
 			) }
@@ -74,10 +74,7 @@ export default function PatternProvenance( { block }: PatternProvenanceProps ) {
 			{ ref && (
 				<>
 					<p>
-						{ __(
-							'Synced pattern instance.',
-							'wp-patterns-debug'
-						) }{ ' ' }
+						{ __( 'Synced pattern instance.', 'patterndex' ) }{ ' ' }
 						{ syncedRecord
 							? `${ syncedRecord.title?.raw ?? '' } (#${ ref })`
 							: `#${ ref }` }
@@ -87,11 +84,11 @@ export default function PatternProvenance( { block }: PatternProvenanceProps ) {
 							<DumpButton
 								label={ __(
 									'Dump wp_block record',
-									'wp-patterns-debug'
+									'patterndex'
 								) }
 								title={ __(
 									'wp_block record',
-									'wp-patterns-debug'
+									'patterndex'
 								) }
 								getValue={ () => syncedRecord }
 							/>
@@ -101,11 +98,11 @@ export default function PatternProvenance( { block }: PatternProvenanceProps ) {
 								<DumpButton
 									label={ __(
 										'Dump instance overrides',
-										'wp-patterns-debug'
+										'patterndex'
 									) }
 									title={ __(
 										'Pattern overrides',
-										'wp-patterns-debug'
+										'patterndex'
 									) }
 									getValue={ () => block.attributes.content }
 								/>
@@ -118,7 +115,7 @@ export default function PatternProvenance( { block }: PatternProvenanceProps ) {
 			{ patternName && (
 				<>
 					<p>
-						{ __( 'Inserted from pattern:', 'wp-patterns-debug' ) }{ ' ' }
+						{ __( 'Inserted from pattern:', 'patterndex' ) }{ ' ' }
 						<code>{ patternName }</code>
 					</p>
 					{ registryPattern ? (
@@ -127,7 +124,7 @@ export default function PatternProvenance( { block }: PatternProvenanceProps ) {
 								<DumpButton
 									label={ __(
 										'Dump source pattern',
-										'wp-patterns-debug'
+										'patterndex'
 									) }
 									title={ patternName }
 									getValue={ () => registryPattern }
@@ -138,7 +135,7 @@ export default function PatternProvenance( { block }: PatternProvenanceProps ) {
 						<p className="wppd-muted">
 							{ __(
 								'Not found in the client pattern registry.',
-								'wp-patterns-debug'
+								'patterndex'
 							) }
 						</p>
 					) }

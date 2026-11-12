@@ -1,15 +1,15 @@
-# Patterns Debug
+# Patterndex – Pattern & Block Debugger
 
 Adds two debugging surfaces to the WordPress block editor (post editor and site editor):
 
 ## Pattern browser
 
-A pinnable **Patterns Debug** sidebar with a **Selected block** debug panel on top, followed by a browser listing every pattern the editor knows about:
+A pinnable **Patterndex** sidebar with a **Selected block** debug panel on top, followed by a browser listing every pattern the editor knows about:
 
 - Registered patterns from the client stores (core, theme, plugin, pattern directory), plus user patterns (`wp_block` posts) with their sync status.
 - Search plus source and category filters.
 - Per pattern: metadata (source, categories, block types, sync status, inserter visibility), a recursive block-usage count, copy name/content, a JSON dump, and a live `BlockPreview`.
-- A **Server registry** section backed by a REST endpoint (`wp-patterns-debug/v1/registry`) that dumps the raw server-side `WP_Block_Patterns_Registry` and category registry — including patterns hidden from the inserter — exactly as PHP registered them.
+- A **Server registry** section backed by a REST endpoint (`patterndex/v1/registry`) that dumps the raw server-side `WP_Block_Patterns_Registry` and category registry — including patterns hidden from the inserter — exactly as PHP registered them.
 
 ## Block debug panel
 
@@ -24,33 +24,33 @@ A **Debug** panel in the block inspector for the selected block, and the same pa
 
 **Debug panel in the block inspector** — overview, dumps, serialized HTML, and the raw JSON attributes editor:
 
-![Debug panel in the block inspector](https://raw.githubusercontent.com/danlapteacru/wp-patterns-debug/main/screenshots/debug-panel.png)
+![Debug panel in the block inspector](https://raw.githubusercontent.com/danlapteacru/patterndex/main/screenshots/debug-panel.png)
 
 **Dump modals** — pretty-printed, copyable dumps of the block instance, block type, or wrapper element:
 
-![Dump modal showing the block instance](https://raw.githubusercontent.com/danlapteacru/wp-patterns-debug/main/screenshots/dump-modal.png)
+![Dump modal showing the block instance](https://raw.githubusercontent.com/danlapteacru/patterndex/main/screenshots/dump-modal.png)
 
 **Pattern browser** — search and filter every registered and user pattern, with metadata, block counts, and live previews:
 
-![Pattern browser with search and live preview](https://raw.githubusercontent.com/danlapteacru/wp-patterns-debug/main/screenshots/pattern-browser.png)
+![Pattern browser with search and live preview](https://raw.githubusercontent.com/danlapteacru/patterndex/main/screenshots/pattern-browser.png)
 
 **Synced pattern provenance** — the sidebar's Selected block panel debugging a `core/block` instance (the block inspector renders no panels for these):
 
-![Selected block panel showing synced pattern provenance](https://raw.githubusercontent.com/danlapteacru/wp-patterns-debug/main/screenshots/synced-pattern.png)
+![Selected block panel showing synced pattern provenance](https://raw.githubusercontent.com/danlapteacru/patterndex/main/screenshots/synced-pattern.png)
 
 **Server registry** — the raw server-side pattern registry, dumped over REST, including patterns hidden from the inserter:
 
-![Server registry dump modal](https://raw.githubusercontent.com/danlapteacru/wp-patterns-debug/main/screenshots/server-registry.png)
+![Server registry dump modal](https://raw.githubusercontent.com/danlapteacru/patterndex/main/screenshots/server-registry.png)
 
 ## Installation
 
 Via Composer:
 
 ```bash
-composer require danlapteacru/wp-patterns-debug
+composer require danlapteacru/patterndex
 ```
 
-Or clone/download into `wp-content/plugins/wp-patterns-debug` — built assets are committed, so no build step is needed.
+Or clone/download into `wp-content/plugins/patterndex` — built assets are committed, so no build step is needed.
 
 ## Requirements
 
@@ -59,11 +59,11 @@ Or clone/download into `wp-content/plugins/wp-patterns-debug` — built assets a
 
 ## Access control
 
-All debug surfaces (assets and the REST endpoint) require the `view_patterns_debug` capability, mapped to `edit_posts` by default. Remap it by filtering `map_meta_cap` at a priority above `0`:
+All debug surfaces (assets and the REST endpoint) require the `view_patterndex` capability, mapped to `edit_posts` by default. Remap it by filtering `map_meta_cap` at a priority above `0`:
 
 ```php
 add_filter( 'map_meta_cap', function ( $caps, $cap ) {
-	if ( 'view_patterns_debug' === $cap ) {
+	if ( 'view_patterndex' === $cap ) {
 		$caps = [ 'manage_options' ];
 	}
 

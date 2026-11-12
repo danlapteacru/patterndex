@@ -2,12 +2,14 @@
 /**
  * Plugin bootstrap.
  *
- * @package wp-patterns-debug
+ * @package patterndex
  */
 
 declare( strict_types=1 );
 
-namespace WpPatternsDebug;
+namespace Patterndex;
+
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Wires up the plugin's features.
